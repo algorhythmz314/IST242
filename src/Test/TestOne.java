@@ -7,6 +7,7 @@ public class TestOne {
 		System.out.println("Hello World! We are Majestic 4!");
 		System.out.println("This is a new test line!!!!");
 		System.out.println("FrenchFries");
+		System.out.println("TestOneClass lives here!");
 		//comment
 	}
 

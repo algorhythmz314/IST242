@@ -1,5 +1,5 @@
 package Test;
 
-public class Chris {
+public class Chris {rocks}
 
 }

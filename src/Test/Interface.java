@@ -16,5 +16,13 @@ public class Interface {
 	Scanner consoleValue = new Scanner(System.in);
 	System.out.println("Enter 0, 1, or 2");
 	int numberEntered = consoleValue.nextInt();
-
-}}
+	
+	//if (numberEntered = 0)
+	//{addItem();}
+	//else if (numberEntered = 1)
+	//else if
+	//else()
+		System.exit(0);
+	
+	}
+	}

@@ -35,7 +35,7 @@ public class Main
 				I.GetNewItem();
 				
 			if (input == 2)
-				Interface.RemoveItem();
+				I.RemoveItem();
 			
 			if (input == 3)
 				I.DisplayCurrentItems();

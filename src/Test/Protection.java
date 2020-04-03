@@ -85,9 +85,9 @@ static Scanner input = new Scanner (System.in);
 				System.out.println ("Please try again:");
 				IsValid = false;
 			}
-	}
+		}
 		return ValidDouble;
-}
+	}
 	
 	
 	public static String GetString (int Lowerbounds, int Upperbounds)

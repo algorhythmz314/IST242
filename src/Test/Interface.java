@@ -75,10 +75,12 @@ public class Interface
 	}
 
 	
-	public static void RemoveItem()
+	public void RemoveItem()
 	{
 		System.out.println("You have selected 'Remove Item'...");
 		System.out.println("Please enter the ID of the item you wish to remove");
+		System.out.println("THIS FUNCTION IS NOT YET IMPLEMENTED");
+		System.out.println();
 	}
 	
 	
@@ -148,6 +150,7 @@ public class Interface
 			this.ItemProperties.add(input);
 		}
 		
+		ItemProperties.remove((ItemProperties.size()-1));		
 		System.out.println();
 		
 	}

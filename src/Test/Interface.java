@@ -27,7 +27,8 @@ import java.util.Scanner;
 
 public class Interface
 {
-	ArrayList<String> ItemProperties = new ArrayList<String>();	
+	ArrayList<String> ItemProperties = new ArrayList<String>();
+	ArrayList<ArrayList<String>> Items = new ArrayList<ArrayList<String>>();
 	
 	public Interface()
 	{
@@ -37,6 +38,7 @@ public class Interface
 	
 	public static void DisplayWelcomeMessage()
 	{
+		System.out.println();
 		System.out.println("Welcome to Majestic 4's Inventory Management System!");
 		System.out.println();
 		
@@ -57,7 +59,7 @@ public class Interface
 	}
 	
 	
-	public ArrayList<String> GetNewItem()
+	public void GetNewItem()
 	{
 		ArrayList<String> NewItem = new ArrayList<String>();
 		int counter = 0;
@@ -69,7 +71,7 @@ public class Interface
 			counter++;
 		}
 		
-		return NewItem;
+		Items.add(NewItem);
 	}
 
 	
@@ -80,21 +82,21 @@ public class Interface
 	}
 	
 	
-	public static void DisplayCurrentItems(String[][] ItemIndex)
+	public void DisplayCurrentItems()
 	{
-		int rows			= ItemIndex.length;
-		int columns			= ItemIndex[0].length;
+		int rows			= Items.size();
+		int columns			= Items.get(0).size();
 		int rowcounter		= 0;
 		int columncounter	= 0;
 		
 		System.out.println("Here are the current items in the inventory...");
-		System.out.println();
+		DisplayItemProperties();
 		
 		while (rowcounter < rows)
 		{
 			while (columncounter < columns)
 			{
-				System.out.print(ItemIndex[rowcounter][columncounter] + "	");
+				System.out.print(Items.get(rowcounter).get(columncounter) + "	");
 				
 				columncounter++;
 			}
@@ -104,7 +106,7 @@ public class Interface
 			rowcounter++;
 			
 		}
-		
+		System.out.println();
 	}
 	
 	

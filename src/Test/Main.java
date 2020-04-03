@@ -20,13 +20,8 @@ public class Main
 		Interface I = new Interface();
 		
 		int input = -1;
-		String[][] ItemIndex = {{"0", "1", "2", "3", "4",},
-								{"0", "1", "2", "3", "4",},
-								{"0", "1", "2", "3", "4",},
-								{"0", "1", "2", "3", "4",}};
 		
 		Interface.DisplayWelcomeMessage();
-		
 		
 		
 		while (input != 0)
@@ -43,7 +38,7 @@ public class Main
 				Interface.RemoveItem();
 			
 			if (input == 3)
-				Interface.DisplayCurrentItems(ItemIndex);
+				I.DisplayCurrentItems();
 			
 			if (input  == 4)
 			{

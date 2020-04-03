@@ -30,6 +30,9 @@ public class Interface
 	public static void DisplayWelcomeMessage()
 	{
 		System.out.println("Welcome to Majestic 4's Inventory Management; System!");
+		System.out.println();
+		
+		Pause(500);
 	}
 	
 	
@@ -39,6 +42,9 @@ public class Interface
 		System.out.println("Enter 2 to Remove an Item");
 		System.out.println("Enter 3 to Display Current Items");
 		System.out.println("Enter 0 to Exit the Program");
+		System.out.println();
+		
+		Pause(500);
 	}
 	
 	
@@ -67,14 +73,38 @@ public class Interface
 	
 	public static void RemoveItem()
 	{
-		System.out.println("You have select 'Remove Item'...");
+		System.out.println("You have selected 'Remove Item'...");
 		System.out.println("Please enter the ID of the item you wish to remove");
 	}
 	
 	
-	public static void DisplayCurrentItems()
+	public static void DisplayCurrentItems(String[][] ItemIndex)
 	{
+		int rows			= 0;
+		int columns			= 0;
+		int rowcounter		= 0;
+		int columncounter	= 0;
+		
+		rows 	= ItemIndex.length;
+		columns = ItemIndex[0].length;
+		
 		System.out.println("Here are the current items in the inventory...");
+		
+		while (rows < rowcounter)
+		{
+			while (columns < columncounter)
+			{
+				System.out.print(ItemIndex[rowcounter][columncounter] + ", ");
+				
+				columncounter++;
+			}
+			
+			System.out.print(b);
+			
+			rowcounter++;
+			
+		}
+		
 	}
 	
 	

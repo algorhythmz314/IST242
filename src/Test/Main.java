@@ -18,7 +18,11 @@ public class Main
 	{
 		Scanner in = new Scanner(System.in);
 		
-		int input;		
+		int input;
+		String[][] ItemIndex = {{"", "", "", "", "",},
+								{"", "", "", "", "",},
+								{"", "", "", "", "",},
+								{"", "", "", "", "",}};
 		
 		Interface.DisplayWelcomeMessage();
 		
@@ -36,7 +40,7 @@ public class Main
 		}
 		else if (input == 3)
 		{
-			Interface.DisplayCurrentItems();
+			Interface.DisplayCurrentItems(ItemIndex);
 		}
 		else if (input == 0)
 		{

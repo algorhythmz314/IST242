@@ -1,5 +1,3 @@
-package Test;
-
 /* Filename:	FileHandler.java
  * Author:		Team 1
  * Assignment:	Read in inventory data
@@ -7,8 +5,8 @@ package Test;
  * Date:		April 1, 2020
  */
 
+package Test;
 
-//comment
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;

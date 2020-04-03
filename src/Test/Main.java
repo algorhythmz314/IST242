@@ -1,3 +1,10 @@
+/* Filename:	FileHandler.java
+ * Author:		Team 1
+ * Assignment:	Read in inventory data
+ * Section:		IST 242.001
+ * Date:		April 1, 2020
+ */
+
 package Test;
 
 import java.util.Scanner;

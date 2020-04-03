@@ -5,6 +5,8 @@
  * Date:		April 1, 2020
  */
 
+//This class contains the main method
+
 package Test;
 
 import java.util.Scanner;
@@ -14,38 +16,38 @@ public class Main
 
 	public static void main(String[] args) 
 	{
-	System.out.println("Welcome to Majestic 4's Inventory Management; System!");
-	System.out.println("Enter 1 to Add an Item");
-	System.out.println("Enter 2 to Remove an Item");
-	System.out.println("Enter 0 to Exit the Program");
+		Scanner in = new Scanner(System.in);
+		
+		int input;		
+		
+		Interface.DisplayWelcomeMessage();
+		
+		Interface.DisplayMenu();
 	
-	//sub-menu 1
-	System.out.println("Please enter the Item ID");
-	System.out.println("Please enter the Item Name");
-	System.out.println("Please enter the Item Type");
-	System.out.println("Please enter the Item Weight");
-	System.out.println("Please enter the Item Price");
-	System.out.println("Please enter the Number of Items");
+		input = Integer.parseInt(in.next());
+		
+		if(input == 1)
+		{
+			Interface.GetNewItem();
+		}
+		else if (input == 2)
+		{
+			Interface.RemoveItem();
+		}
+		else if (input == 3)
+		{
+			Interface.DisplayCurrentItems();
+		}
+		else if (input == 0)
+		{
+			Interface.ExitApp();
+		}
+		else
+		{
+			System.out.println("The input is not valid");
+		}
+		
+		in.close();
 	
-	//sub-menu 2
-	System.out.println("Please enter the Item ID");
-	
-	//sub-menu 3
-	System.out.println("Thanks for using Majestic 4's Inventory Management System!");
-	System.exit(0);
-
-	
-	
-	
-	Scanner consoleValue = new Scanner(System.in);
-	System.out.println("Enter 0, 1, or 2");
-	int numberEntered = consoleValue.nextInt();
-	
-	//if (numberEntered = 0)
-	//{addItem();}
-	//else if (numberEntered = 1)
-	//else if
-	//else()
-	System.exit(0);
 	}
 }

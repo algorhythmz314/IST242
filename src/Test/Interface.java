@@ -1,4 +1,4 @@
-/* Filename:	FileHandler.java
+/* Filename:	Interface.java
  * Author:		Team 1
  * Assignment:	Read in inventory data
  * Section:		IST 242.001
@@ -18,6 +18,7 @@
 
 package Test;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //‎⁨Macintosh SSD⁩ ▸ ⁨Users⁩ ▸ ⁨royaleblue⁩ ▸ ⁨git⁩ ▸ ⁨IST242⁩ ▸ ⁨src⁩ ▸ ⁨Test⁩
@@ -26,10 +27,19 @@ import java.util.Scanner;
 
 public class Interface
 {
+	ArrayList<String> ItemProperties = new ArrayList<String>();	
+	
+	public Interface()
+	{
+		this.ItemProperties.add("ItemID");
+	}
+	
+	
+	
 	
 	public static void DisplayWelcomeMessage()
 	{
-		System.out.println("Welcome to Majestic 4's Inventory Management; System!");
+		System.out.println("Welcome to Majestic 4's Inventory Management System!");
 		System.out.println();
 		
 		Pause(500);
@@ -41,6 +51,7 @@ public class Interface
 		System.out.println("Enter 1 to Add an Item");
 		System.out.println("Enter 2 to Remove an Item");
 		System.out.println("Enter 3 to Display Current Items");
+		System.out.println("Enter 4 to Display Options");
 		System.out.println("Enter 0 to Exit the Program");
 		System.out.println();
 		
@@ -89,22 +100,50 @@ public class Interface
 		columns = ItemIndex[0].length;
 		
 		System.out.println("Here are the current items in the inventory...");
+		System.out.println();
 		
-		while (rows < rowcounter)
+		while (rowcounter < rows)
 		{
-			while (columns < columncounter)
+			while (columncounter < columns)
 			{
 				System.out.print(ItemIndex[rowcounter][columncounter] + ", ");
 				
 				columncounter++;
 			}
 			
-			System.out.print(b);
-			
+			System.out.println();
+			columncounter = 0;
 			rowcounter++;
 			
 		}
 		
+	}
+	
+	
+	public static void DisplayOptions()
+	{
+		System.out.println("Enter 1 to Add Item Properties");
+		System.out.println("Enter 2 to View Item Properties");
+		System.out.println("Enter 0 to Exit");
+	}
+	
+	
+	public void DisplayItemProperties()
+	{
+		int counter = 0;
+		
+		while (counter < this.ItemProperties.size())
+		{
+			System.out.println(ItemProperties.get(counter) + "	");
+			counter++;
+		}
+	}
+	
+	
+	public static void DisplayAddItemProperties()
+	{
+		System.out.println("Add the name of each Item Propery followed by the enter key...");
+		System.out.println("Enter a '0' at any time to save and exit");
 	}
 	
 	

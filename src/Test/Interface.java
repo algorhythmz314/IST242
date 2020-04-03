@@ -35,8 +35,6 @@ public class Interface
 	}
 	
 	
-	
-	
 	public static void DisplayWelcomeMessage()
 	{
 		System.out.println("Welcome to Majestic 4's Inventory Management System!");
@@ -59,22 +57,18 @@ public class Interface
 	}
 	
 	
-	public static String[] GetNewItem()
+	public ArrayList<String> GetNewItem()
 	{
 		Scanner input = new Scanner(System.in);
+		ArrayList<String> NewItem = new ArrayList<String>();
+		int counter = 0;
 		
-		String[] NewItem = new String[5];
-		
-		System.out.println("Please enter the Item ID");
-		NewItem[0] = input.next();
-		System.out.println("Please enter the Item Name");
-		NewItem[1] = input.next();
-		System.out.println("Please enter the Item Type");
-		NewItem[2] = input.next();
-		System.out.println("Please enter the Item Weight");
-		NewItem[3] = input.next();
-		System.out.println("Please enter the Item Price");
-		NewItem[4] = input.next();
+		while (counter < this.ItemProperties.size())
+		{
+			System.out.println("Please enter the " + ItemProperties.get(counter));
+			NewItem.add(counter, input.next());
+			counter++;
+		}
 		
 		input.close();
 		
@@ -91,13 +85,10 @@ public class Interface
 	
 	public static void DisplayCurrentItems(String[][] ItemIndex)
 	{
-		int rows			= 0;
-		int columns			= 0;
+		int rows			= ItemIndex.length;
+		int columns			= ItemIndex[0].length;
 		int rowcounter		= 0;
 		int columncounter	= 0;
-		
-		rows 	= ItemIndex.length;
-		columns = ItemIndex[0].length;
 		
 		System.out.println("Here are the current items in the inventory...");
 		System.out.println();
@@ -106,7 +97,7 @@ public class Interface
 		{
 			while (columncounter < columns)
 			{
-				System.out.print(ItemIndex[rowcounter][columncounter] + ", ");
+				System.out.print(ItemIndex[rowcounter][columncounter] + "	");
 				
 				columncounter++;
 			}
@@ -130,20 +121,36 @@ public class Interface
 	
 	public void DisplayItemProperties()
 	{
+		System.out.println();
 		int counter = 0;
 		
 		while (counter < this.ItemProperties.size())
 		{
-			System.out.println(ItemProperties.get(counter) + "	");
+			System.out.print(ItemProperties.get(counter) + "	");
 			counter++;
 		}
+		
+		System.out.println();
+		System.out.println();
+		
 	}
 	
 	
-	public static void DisplayAddItemProperties()
+	public void AddItemProperties()
 	{
-		System.out.println("Add the name of each Item Propery followed by the enter key...");
+		System.out.println("Add the name of each Item Property followed by the enter key...");
 		System.out.println("Enter a '0' at any time to save and exit");
+		
+		String input = "";
+		
+		while (!(input.equals("0")))
+		{
+			input = Protection.GetString(-1, -1);
+			this.ItemProperties.add(input);
+		}
+		
+		System.out.println();
+		
 	}
 	
 	

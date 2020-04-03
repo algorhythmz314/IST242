@@ -18,9 +18,8 @@ public class Main
 	public static void main(String[] args) 
 	{
 		Interface I = new Interface();
-		Scanner in = new Scanner(System.in);
 		
-		int input;
+		int input = -1;
 		String[][] ItemIndex = {{"0", "1", "2", "3", "4",},
 								{"0", "1", "2", "3", "4",},
 								{"0", "1", "2", "3", "4",},
@@ -28,49 +27,46 @@ public class Main
 		
 		Interface.DisplayWelcomeMessage();
 		
-		Interface.DisplayMenu();
-	
-		input = Integer.parseInt(in.next());
 		
-		if(input == 1)
+		
+		while (input != 0)
 		{
-			Interface.GetNewItem();
-		}
-		else if (input == 2)
-		{
-			Interface.RemoveItem();
-		}
-		else if (input == 3)
-		{
-			Interface.DisplayCurrentItems(ItemIndex);
-		}
-		else if (input  == 4)
-		{
-			Interface.DisplayOptions();
-			input = Integer.parseInt(in.next());
+			
+			Interface.DisplayMenu();
+			
+			input = Protection.GetInt(0, 4);
+		
 			if(input == 1)
-			{
-				Interface.DisplayAddItemProperties();
-			}
+				I.GetNewItem();
+				
 			if (input == 2)
+				Interface.RemoveItem();
+			
+			if (input == 3)
+				Interface.DisplayCurrentItems(ItemIndex);
+			
+			if (input  == 4)
 			{
-				I.DisplayItemProperties();
+				input = -1;
+				
+				while (input != 0)
+				{
+					Interface.DisplayOptions();
+					input = Protection.GetInt(0, 2);
+					
+					if(input == 1)
+						I.AddItemProperties();
+					
+					if (input == 2)
+						I.DisplayItemProperties();
+
+				}
+				input = -1;
 			}
-			if (input == 0);
-			{
-				System.exit(0);
-			}
-		}
-		else if (input == 0)
-		{
-			Interface.ExitApp();
-		}
-		else
-		{
-			System.out.println("The input is not valid");
 		}
 		
-		in.close();
-	
+		Interface.ExitApp();
+		
 	}
 }
+

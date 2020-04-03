@@ -2,5 +2,5 @@ package Test;
 
 public class Chris
 {
-Chris()
+System.out.println("Hi, my name is Chris!");
 }

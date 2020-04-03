@@ -67,7 +67,7 @@ public class Interface
 	
 	public static void RemoveItem()
 	{
-		System.out.println("You have select 'Remove Item'...");
+		System.out.println("You have selected 'Remove Item'...");
 		System.out.println("Please enter the ID of the item you wish to remove");
 	}
 	

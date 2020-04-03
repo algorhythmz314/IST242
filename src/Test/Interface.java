@@ -59,18 +59,15 @@ public class Interface
 	
 	public ArrayList<String> GetNewItem()
 	{
-		Scanner input = new Scanner(System.in);
 		ArrayList<String> NewItem = new ArrayList<String>();
 		int counter = 0;
 		
 		while (counter < this.ItemProperties.size())
 		{
 			System.out.println("Please enter the " + ItemProperties.get(counter));
-			NewItem.add(counter, input.next());
+			NewItem.add(counter, Protection.GetString(-1, -1));
 			counter++;
 		}
-		
-		input.close();
 		
 		return NewItem;
 	}

@@ -19,6 +19,22 @@ public class Main
 	System.out.println("Enter 2 to Remove an Item");
 	System.out.println("Enter 0 to Exit the Program");
 	
+	//sub-menu 1
+	System.out.println("Please enter the Item ID");
+	System.out.println("Please enter the Item Name");
+	System.out.println("Please enter the Item Type");
+	System.out.println("Please enter the Item Weight");
+	System.out.println("Please enter the Item Price");
+	System.out.println("Please enter the Number of Items");
+	
+	//sub-menu 2
+	System.out.println("Please enter the Item ID");
+	
+	//sub-menu 3
+	System.out.println("Thanks for using Majestic 4's Inventory Management System!");
+	System.exit(0);
+
+	
 	
 	
 	Scanner consoleValue = new Scanner(System.in);
